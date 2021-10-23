@@ -1,3 +1,17 @@
 .hello {
     font-size: 28px;
+    width: 70%;
+    margin: 50px auto 50px auto;
+}
+
+.blog {
+    font-size: 18px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.date {
+    font-size: 18px;
+    width: 70%;
+    margin: 10px auto;
 }
