@@ -28,4 +28,8 @@ public class ElegantBansheeComServer {
         return new HandlebarsTemplateEngine().render(new ModelAndView(model, "index.hbs"));
     }
     
+    static String getPostInitialPost(Request request, Response response) {
+        Map<String, Object> model = new HashMap<>();
+        return new HandlebarsTemplateEngine().render(new ModelAndView(model, "post_initial_post.hbs"));
+    }
 }
