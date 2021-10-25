@@ -6,6 +6,7 @@ import org.jetbrains.annotations.Nullable;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
+import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,20 +17,11 @@ import java.util.stream.Collectors;
 import java.io.BufferedReader;
 
 public class ElegantBansheeComServer {
-	
-	/**
-     * Get the website root
-     * @param request request
-     * @param response response
-     * @return root html
-     */
-    static String getIndex(@SuppressWarnings("unused") Request request, @SuppressWarnings("unused") Response response) {
-        Map<String, Object> model = new HashMap<>();
-        return new HandlebarsTemplateEngine().render(new ModelAndView(model, "index.hbs"));
-    }
     
-    static String getPostInitialPost(Request request, Response response) {
-        Map<String, Object> model = new HashMap<>();
-        return new HandlebarsTemplateEngine().render(new ModelAndView(model, "post_initial_post.hbs"));
+    static void getGeneric(String path, String templatePath) {
+        get(path, (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new HandlebarsTemplateEngine().render(new ModelAndView(model, templatePath));
+        });
     }
 }

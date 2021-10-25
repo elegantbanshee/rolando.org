@@ -29,9 +29,9 @@ public class ElegantBansheeCom {
         staticFiles.location("/static/");
         staticFiles.expireTime(604800); // One Week cache
         // Web
-        get("/", ElegantBansheeComServer::getIndex);
-        get("/post/initial_post", 
-            ElegantBansheeComServer::getPostInitialPost);
+        ElegantBansheeComServer.getGeneric("/", "index.hbs");
+        ElegantBansheeComServer.getGeneric("/post/initial_post","post_initial_post.hbs");
+        ElegantBansheeComServer.getGeneric("/post/a_foot","post_a_foot.hbs");
 	}
 	
 	/**
