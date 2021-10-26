@@ -16,7 +16,13 @@
     margin: 10px auto;
 }
 
-.header a | header a:visited{
+.header a {
+    color: #000;
+    text-decoration: overline;
+    font-weight: bold;
+ }
+
+.header a:visited {
     color: #000;
     text-decoration: overline;
     font-weight: bold;
