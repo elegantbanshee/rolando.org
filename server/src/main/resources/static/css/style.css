@@ -16,6 +16,12 @@
     margin: 10px auto;
 }
 
+.header a | header a:visited{
+    color: #000;
+    text-decoration: overline;
+    font-weight: bold;
+ }
+
 .date {
     font-size: 18px;
     width: 70%;
