@@ -32,6 +32,7 @@ public class ElegantBansheeCom {
         ElegantBansheeComServer.getGeneric("/", "index.hbs");
         ElegantBansheeComServer.getGeneric("/post/initial_post","post_initial_post.hbs");
         ElegantBansheeComServer.getGeneric("/post/a_foot","post_a_foot.hbs");
+        ElegantBansheeComServer.getGeneric("/post/an_actual_post", "post_an_actual_post.hbs");
 	}
 	
 	/**
