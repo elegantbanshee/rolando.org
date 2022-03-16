@@ -1,3 +1,21 @@
 <p class="header"><a href="/post/a_foot">A Foot?</a></p>
 <p class="date">Monday, October 25, 2021 - 4:01pm</p>
 <p class="blog">Test foot. Please ignore.</p>
+<img class="image" src="#" id="foot-image" alt="foot">
+
+<script type="text/javascript">
+    function get_images() {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.responseText);
+                var foot = document.getElementById("foot-image");
+                foot.src = json.data[0].url
+            }
+        }
+        request.open("POST", "https://rslideshow.rolando.org/api/data");
+        request.setRequestHeader("Content-Type", "text/plain");
+        request.send("feet;no_page");
+    }
+    get_images();
+</script>
